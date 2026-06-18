@@ -60,19 +60,22 @@ section {
 }
 
 .info h3{
-    font-size: var(--font-xl);
+    font-size: var(--font-lg);
 }
 
 .board{
     border: 1px solid var(--bg-secondary-color);
     flex-grow: 1;
     display: grid;
-    grid-template-columns:repeat(auto-fill,minmax(40px,1fr));
-    grid-template-rows: repeat(auto-fill,minmax(40px,1fr));
+    grid-template-columns:repeat(auto-fill,minmax(50px,1fr));
+    grid-template-rows: repeat(auto-fill,minmax(50px,1fr));
 }
 
 .blocks{
-    /* height: 50px;
-    width: 50px; */
     border: 1px solid var(--bg-secondary-color);
+    text-align: center;
+}
+
+.fill{
+    background-color: greenyellow;
 }
