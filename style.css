@@ -65,15 +65,14 @@ section {
 
 .board{
     border: 1px solid var(--bg-secondary-color);
-    display: grid;
-    grid-template-columns: repeat(auto-fill , 50px 1fr);
-    grid-template-rows: repeat(auto-fill , 50px 1fr);
     flex-grow: 1;
-
+    display: grid;
+    grid-template-columns:repeat(auto-fill,minmax(50px,1fr));
+    grid-template-rows: repeat(auto-fill,minmax(50px,1fr));
 }
 
 .blocks{
-    height: 50px;
-    width: 50px;
+    /* height: 50px;
+    width: 50px; */
     border: 1px solid var(--bg-secondary-color);
 }
