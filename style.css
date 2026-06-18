@@ -1,0 +1,79 @@
+:root{
+    /* background colors */
+    --bg-primary-color : rgb(28, 28, 28);
+    --bg-secondary-color : rgb(189, 188, 188);
+
+
+    /* space variable */
+    --space-xs:0.25rem;
+    --space-sm:0.5rem;
+    --space-md:0.75rem;
+    --space-lg:1rem;
+    --space-xl:2rem;
+    --space-2xl:3rem;
+
+    /* font variables */
+    --font-xs:0.25rem;
+    --font-sm:0.5rem;
+    --font-md:0.75rem;
+    --font-lg:1rem;
+    --font-xl:1.5rem;
+    --font-2xl:2rem;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+main,section{
+    height: 100%;
+    width: 100%;
+}
+
+section {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: var(--space-xl) var(--space-xl);
+    background-color: var(--bg-primary-color);
+    gap: 20px;
+}
+
+.infos{
+    /* background-color: orange; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid var(--bg-secondary-color); */
+}
+
+.info{
+    padding: var(--space-md);
+    border: 1px solid var(--bg-secondary-color);
+}
+
+.info h3{
+    font-size: var(--font-xl);
+}
+
+.board{
+    border: 1px solid var(--bg-secondary-color);
+    display: grid;
+    grid-template-columns: repeat(auto-fill , 50px 1fr);
+    grid-template-rows: repeat(auto-fill , 50px 1fr);
+    flex-grow: 1;
+
+}
+
+.blocks{
+    height: 50px;
+    width: 50px;
+    border: 1px solid var(--bg-secondary-color);
+}
