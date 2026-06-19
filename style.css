@@ -74,6 +74,7 @@ section {
 .blocks{
     border: 1px solid var(--bg-secondary-color);
     text-align: center;
+    
 }
 
 .fill{
