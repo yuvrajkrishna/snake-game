@@ -17,7 +17,17 @@ for(let row = 0 ; row < rows ;  row++){
 }
 
 let snake = [{x:2,y:3}]
+let direction = "down"
 
-snake.forEach(element=>{
+setInterval(() => {
+    let head = null
+    if(direction === "down"){
+        head = {x:snake[0].x+1,y:snake[0].y};
+    }
+    snake.forEach(element=>{
     blocks[`${element.x}-${element.y}`].classList.add('fill')
 })
+    // snake.unshift(head)
+    // snake.pop()
+}, 400);
+
