@@ -19,9 +19,28 @@ for(let row = 0 ; row < rows ;  row++){
 let snake = [{x:2,y:3}]
 let direction = "down"
 
+let food = [
+    {
+        x : Math.floor(Math.random()*rows),
+        y : Math.floor(Math.random()*cols)
+    }
+]
+
+console.log(food[0])
+
+function drawSnake(){
+    snake.forEach(segment=>{
+        blocks[`${segment.x}-${segment.y}`].classList.add('fill')
+    })
+}
 
 setInterval(() => {
    let head = null
+
+   food.forEach(item=>{
+    blocks[`${item.x}-${item.y}`].classList.add('food')
+   })
+
    if(direction === "down"){
     head = {x:snake[0].x+1,y:snake[0].y}
    }
@@ -38,13 +57,24 @@ setInterval(() => {
    snake.forEach(segment=>{
         blocks[`${segment.x}-${segment.y}`].classList.remove('fill')
     })
-
     snake.unshift(head)
     snake.pop()
+    drawSnake()
 
-    snake.forEach(segment=>{
-        blocks[`${segment.x}-${segment.y}`].classList.add('fill')
-    })
+
+    if(food[0].x === snake[0].x && food[0].y === snake[0].y){
+        console.log("eat");
+        food.forEach(item=>{
+            blocks[`${item.x}-${item.y}`].classList.remove('food')
+        })
+        food.pop()
+        food = [
+    {
+        x : Math.floor(Math.random()*rows),
+        y : Math.floor(Math.random()*cols)
+    }
+]
+    }
  }, 400);
 
 
