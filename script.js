@@ -2,10 +2,13 @@ const board = document.querySelector('.board')
 const blockHeight = 50
 const blockWidth = 50
 let score = document.querySelector('#score')
+let highScore = document.querySelector('#high-score')
+let highScoreElem = Number(localStorage.getItem("highScore")) || 0;
 let scoreElem = 0 
 let cols = Math.floor(board.clientWidth/blockWidth)
 let rows = Math.floor(board.clientHeight/blockHeight)
 
+highScore.textContent = highScoreElem;
 const blocks = []
 
 for(let row = 0 ; row < rows ;  row++){
@@ -77,6 +80,11 @@ setInterval(() => {
     if(food[0].x === snake[0].x && food[0].y === snake[0].y){
         scoreElem+=10
         score.textContent = scoreElem
+        if(scoreElem > highScoreElem){
+            highScoreElem = scoreElem
+            localStorage.setItem("highScore", highScoreElem);
+        }
+        highScore.textContent = highScoreElem
         food.forEach(item=>{
             blocks[`${item.x}-${item.y}`].classList.remove('food')
         })
