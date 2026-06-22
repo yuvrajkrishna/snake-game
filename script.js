@@ -1,6 +1,8 @@
 const board = document.querySelector('.board')
 const blockHeight = 50
 const blockWidth = 50
+let score = document.querySelector('#score')
+let scoreElem = 0 
 let cols = Math.floor(board.clientWidth/blockWidth)
 let rows = Math.floor(board.clientHeight/blockHeight)
 
@@ -73,7 +75,8 @@ setInterval(() => {
 
     // check if snake had eaten the food or not 
     if(food[0].x === snake[0].x && food[0].y === snake[0].y){
-        console.log("eat");
+        scoreElem+=10
+        score.textContent = scoreElem
         food.forEach(item=>{
             blocks[`${item.x}-${item.y}`].classList.remove('food')
         })
